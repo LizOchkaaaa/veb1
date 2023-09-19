@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Лабораторная работа по Веб-программированию</title>
+	<style>
+		html {
+			min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #dedede;
+    }
+
+    header{
+      width: 100%;
+      height: 70px;
+      flex-shrink: 0;
+      text-align: justify;
+      font-family: serif;
+      font-style: inherit;
+      font-size: larger;
+      color: black;
+      background-color: #cdc684;
+    }
+
+    div {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    #logo {
+      position: absolute;
+      width: 9%;
+      top: -10px;
+    }
+
+    .main {
+      color: #000;
+      text-align: center;
+      font-family: Averia Serif Libre;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .left-right-line-short-header {
+      position: absolute;
+      border-spacing: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 20px;
+      vertical-align: top;
+      font-weight: 300;
+      font-family: serif;
+      font-style: inherit;
+      font-size: larger;
+      color: black;
+      line-height: normal;
+      left: 300px;
+    }
+
+    .left-right-line-short-header:before {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: -50px;
+    }
+
+    .left-right-line-short-header:after {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: 10px;
+    }
+
+    .left-right-line-short-header1 {
+      position: absolute;
+      border-spacing: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 20px;
+      vertical-align: top;
+      font-weight: 300;
+      font-family: serif;
+      font-style: inherit;
+      font-size: larger;
+      color: black;
+      line-height: normal;
+      left: 900px;
+    }
+
+    .left-right-line-short-header1:before {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: -50px;
+    }
+
+    .left-right-line-short-header1:after {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: 10px;
+    }
+
+    .left-right-line-short-header2 {
+      position: absolute;
+      border-spacing: 0;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 20px;
+      vertical-align: top;
+      font-weight: 300;
+      font-family: serif;
+      font-style: inherit;
+      font-size: larger;
+      color: black;
+      line-height: normal;
+      left: 1200px;
+    }
+
+    .left-right-line-short-header2:before {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: -50px;
+    }
+
+    .left-right-line-short-header2:after {
+      content: "";
+      border-bottom: 1px solid gray;
+      border-top: 1px solid gray;
+      width: 40px;
+      height: 0.1em;
+      position: absolute;
+      top: 12px;
+      margin-left: 10px;
+    }
+
+    .container2 {
+      background-color: white;
+      width: 85%;
+      max-width: 50%;
+      left: 45%;
+      top: 20%;
+      position: absolute;
+      border-radius: 20px;
+      height: 30%;
+    }
+
+    .p1 {
+      position: absolute;
+      top: 10%;
+    }
+
+    .p2 {
+      position: absolute;
+      top: 30%;
+    }
+
+    .p3 {
+      position: absolute;
+      top: 48%;
+    }
+
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      background: solid gray;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      border-radius: 50%;
+      left: 13%;
+      top: 14%;
+    }
+
+    .circle_text {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 17%;
+    }
+
+    .circle1 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 21%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+      font-size: 18px;
+    }
+
+    .circle_text1 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 25%;
+    }
+
+    .circle2 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 31%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+    }
+
+    .circle_text2 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 35%;
+    }
+
+    .circle3 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      left: 40%;
+      top: 15%;
+    }
+
+    .circle_text3 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 44%
+    }
+
+    .circle4 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 50%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+    }
+
+    .circle_text4 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 54%
+    }
+
+    .circle5 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 58%;
+      top: 15%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .circle_text5 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 62%
+    }
+
+    .circle6 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 68%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+    }
+
+    .circle_text6 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 72%
+    }
+
+    .circle7 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 76%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+    }
+
+    .circle_text7 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 80%
+    }
+
+    .circle8 {
+      position: absolute;
+      background: solid gray;
+      border-radius: 50%;
+      left: 86%;
+      width: 25px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      top: 15%;
+    }
+
+    .circle_text8 {
+      position: absolute;
+      color: #000;
+      font-family: serif;
+      font-size: 20px;
+      font-style: normal;
+      top: 15%;
+      left: 90%
+    }
+
+    .container3 {
+      background-color: white;
+      width: 35%;
+      left: 35%;
+      top:75%;
+      position: absolute;
+      border-radius: 15px;
+      height: 50%;
+    }
+
+    .frame {
+      background-color: solid gray;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .frame .overlap-wrapper {
+      background-color: solid gray;
+      
+    }
+
+    .frame .overlap {
+      position: relative;
+    
+      top: -1px;
+      left: 130px;
+    }
+
+    .frame .overlap-group {
+      position: absolute;
+
+      top: 2px;
+      left: 0;
+    }
+
+    .frame .polygon {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 131px;
+      left: 136px;
+    }
+
+    .frame .rectangle {
+      position: absolute;
+      width: 180px;
+      height: 87px;
+      top: 232px;
+      left: 37px;
+      background-color: #cdc684;
+    }
+
+    .frame .ellipse {
+      position: absolute;
+      width: 200px;
+      height: 191px;
+      top: 130px;
+      left: 136px;
+    }
+
+    .frame .arrow {
+      position: absolute;
+      width: 22px;
+      height: 486px;
+      top: 0;
+      left: 225px;
+    }
+
+    .frame .img {
+      position: absolute;
+      width: 502px;
+      height: 22px;
+      top: 222px;
+      left: 0;
+    }
+
+    .frame .line {
+      width: 1px;
+      height: 8px;
+      top: 224px;
+      left: 336px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-2 {
+      width: 1px;
+      height: 8px;
+      top: 224px;
+      left: 436px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-3 {
+      width: 8px;
+      height: 1px;
+      top: 29px;
+      left: 236px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-4 {
+      width: 8px;
+      height: 1px;
+      top: 129px;
+      left: 236px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-5 {
+      width: 1px;
+      height: 8px;
+      top: 222px;
+      left: 136px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-6 {
+      width: 1px;
+      height: 7px;
+      top: 222px;
+      left: 36px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-7 {
+      width: 8px;
+      height: 1px;
+      top: 429px;
+      left: 236px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .line-8 {
+      width: 8px;
+      height: 1px;
+      top: 320px;
+      left: 236px;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    .frame .text-wrapper {
+      position: absolute;
+      top: 423px;
+      left: 246px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .div {
+      position: absolute;
+      top: 123px;
+      left: 245px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-2 {
+      top: 209px;
+      left: 130px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-3 {
+      top: 314px;
+      left: 245px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-4 {
+      top: 209px;
+      left: 327px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-5 {
+      position: absolute;
+      top: 0;
+      left: 254px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-6 {
+      position: absolute;
+      top: 205px;
+      left: 491px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-7 {
+      top: 25px;
+      left: 250px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-8 {
+      top: 211px;
+      left: 34px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .frame .text-wrapper-9 {
+      top: 211px;
+      left: 432px;
+      position: absolute;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .active {
+      background-color: #cdc684;
+    }
+
+    .text {
+      position: absolute;
+      border-radius: 10%;
+      flex-shrink: 0;
+      top: 38%;
+      left: 14%;
+      width: 15%;
+    }
+
+    .submit {
+      position: absolute;
+      flex-shrink: 0;
+      top: 80%;
+      left: 45%;
+      accent-color: #cdc684;
+      cursor: pointer;
+    }
+
+    .submit:active {
+      background-color: #cdc684;
+    }
+
+    iframe {
+      width: 95%;
+      position: absolute;
+      height: 95%;
+    }
+
+    .selectR {
+      position: relative;
+      flex-shrink: 0;
+      top: 55%;
+      left: 13%;
+      accent-color: #cdc684;
+    }
+
+    .error {
+      position: relative;
+      flex-shrink: 0;
+      top: 40%;
+      left: 37%;
+    }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img id = "logo" src="itmo.png" width="100" height="85"/>
+		</div>
+		<div class="left-right-line-short-header">Суворова Елизавета Михайловна</div>
+		<div class="left-right-line-short-header1">P3223</div>
+		<div class="left-right-line-short-header2">Вариант 3342</div>
+	</header>
+	<div class="frame">
+		<div class="overlap-wrapper">
+		  <div class="overlap">
+			<div class="overlap-group">
+			  <img class="polygon" src="Polygon 1.svg" />
+			  <div class="rectangle" src="Rectangle 2.svg"></div>
+			  <img class="ellipse" src="Ellipse 1.svg" />
+			  <img class="arrow" src="Arrow 3.svg" />
+			  <img class="img" src="Arrow 4.svg" />
+			  <img class="line" src="Line 9.svg" />
+			  <img class="line-2" src="Line 10.svg" />
+			  <img class="line-3" src="Line 11.svg" />
+			  <img class="line-4" src="Line 12.svg" />
+			  <img class="line-5" src="Line 13.svg" />
+			  <img class="line-6" src="Line 14.svg" />
+			  <img class="line-7" src="Line 15.svg" />
+			  <img class="line-8" src="Line 16.svg" />
+			  <div class="text-wrapper">-R</div>
+			  <div class="div">R/2</div>
+			  <div class="text-wrapper-2">-R/2</div>
+			  <div class="text-wrapper-3">-R/2</div>
+			  <div class="text-wrapper-4">R/2</div>
+			</div>
+			<div class="text-wrapper-5">y</div>
+			<div class="text-wrapper-6">x</div>
+			<div class="text-wrapper-7">R</div>
+			<div class="text-wrapper-8">-R</div>
+			<div class="text-wrapper-9">R</div>
+		  </div>
+		</div>
+	  </div>
+  <form class="form" action="script.php" method="POST" target="table" onsubmit="return send()">
+	  <div class="container2">
+        <p class="p1">Выберите X: </p>
+        <input type="radio"class="circle" id="btn" name="myradio" value="-2"></input>
+        <label class="circle_text">-2</label>
+        <input type="radio" class="circle1" id="btn" name="myradio" value="-1.5"></input>
+        <label class="circle_text1">-1.5</label>
+        <input type="radio" class="circle2" id="btn" name="myradio" value="-1"></input>
+        <label class="circle_text2">-1</label>
+        <input type="radio" class="circle3" id="btn" name="myradio" value="-0.5"></input>
+        <label class="circle_text3">-0.5</label>
+        <input type="radio" class="circle4" id="btn" name="myradio" value="0"></input>
+        <label class="circle_text4">0</label>
+        <input type="radio" class="circle5" id="btn" name="myradio" value="0.5"></input>
+        <label class="circle_text5">0.5</label>
+        <input type="radio" class="circle6" id="btn" name="myradio" value="1"></input>
+        <label class="circle_text6">1</label>
+        <input type="radio" class="circle7" id="btn" name="myradio" value="1.5"></input>
+        <label class="circle_text7">1.5</label>
+        <input type="radio" class="circle8" id="btn" name="myradio" value="2"></input>
+        <label class="circle_text8">2</label>
+        <p class="p2">Выберите Y: </p>
+        <input class="text" id="text" name="y" type="float"  placeholder="(-5...5)"/>
+        <span class="error" id="yError"></span>
+        <p class="p3">Выберите R: </p>
+        <select class="selectR" name="selectR">
+            <option selected="R" disabled="R">R</option>
+            <option name="selectR" value="1" >1</option>
+            <option name="selectR" value="1.5" >1.5</option>
+            <option name="selectR" value="2" >2</option>
+            <option name="selectR" value="2.5" >2.5</option>
+            <option name="selectR" value="3">3</option>
+         </select>
+        <input class="submit" type="submit" name="submit" value="Отправить" id="btn1" ></input>
+        </p>
+	    </div>
+    </form>  
+	<div class="container3">
+    <iframe name = "table"></iframe>
+	</div>
+  <script>
+    var form = document.querySelector('.form')
+    var validateBtn = form.querySelector('.submit')
+    var chooseX = document.getElementsByName('myradio')
+    var chooseY = form.querySelector('.text')
+    var selectR = form.querySelector('.selectR')
+    var anyX = form.querySelector('.p1')
+    var yErrorElement = document.getElementById("yError");
+
+    var flagX = true
+    var flagY = true
+    var flagR = true
+
+    var styleX = anyX.style
+    var styleY = chooseY.style
+    var styleR = selectR.style
+
+    var arrayX = ["-2" , "-1.5" , "-1" , "-0.5" , "0" , "0.5" , "1" , "1.5" , "2"]
+    var arrayR = ["1" , "1.5" , "2" , "2.5" , "3"]
+
+    chooseY.addEventListener('input', function() {
+      chooseY.style = styleY
+    if (isNaN(chooseY.value) && chooseY.value || !isNaN(chooseY.value) && (Number(chooseY.value) <= -5 || Number(chooseY.value) >= 5 )) {
+      color();
+    }
+    else {
+      flagY = true
+    }
+  })
+
+  function color() {
+    setTimeout(function() {
+      chooseY.value = ""
+      chooseY.style.border = '3px solid red'
+      chooseY.blur()
+      flagY = false
+      }, 100)
+  }
+
+  selectR.addEventListener('change', function() {
+			selectR.style = styleR
+			flagR = true
+  })
+
+  for(let i = 0; i< chooseX.length; i++){
+    chooseX[i].addEventListener('change', function() {
+        anyX.style = styleX
+        flagX = true
+      })
+  }
+
+  function send(event) {
+    if (!chooseY.value || chooseY.value == '-') {
+      chooseY.style.border = '3px solid red'
+      flagY = false
+    }
+    
+    if (selectR.value =="R" || !(arrayR.includes(selectR.value))) {
+      selectR.style.border = '3px solid red'
+      flagR = false 
+    }
+
+    else {
+      selectR.style = styleR
+      flagR = true
+    }
+
+    for (var i=0, length = chooseX.length; i<length; i++) {
+      if (chooseX[i].checked) {
+        if(arrayX.includes(chooseX[i].value)){
+          var id = (chooseX[i].id)
+        }
+        else{
+          flagX = false
+        }
+        break
+      }
+    }
+
+    if (!id) {
+      anyX.style.color = 'red'
+      anyX.style.fontWeight = 'bold'
+      flagX = false
+    }
+
+    if (flagX == true && flagY == true && flagR == true) {
+      return true;
+    }
+    return false;
+  }
+
+  </script>
+</body>
+</html>
